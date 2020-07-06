@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wishlist</title>
+  </head>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <style>
+    .float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+
+    .my-float {
+      margin-top: 16px;
+    }
+    @media (max-width: 992px) {
+      .mobileMenu {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0px;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+        transition: all ease 0.35s;
+        padding-top: 8%;
+        padding-left: 10%;
+        background-color: whitesmoke;
+      }
+      .mobileMenu.open {
+        transform: translateX(0%);
+      }
+      .mobileMenu .navbar-nav {
+        overflow-y: auto;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+      }
+      .overlay.open {
+        display: block;
+        z-index: 1029;
+      }
+    }
+    @media (min-width: 991px) {
+      .largeMenu {
+        background-color: rgba(255, 255, 255, 0.692);
+        font-size: 38px;
+        font-weight: bold;
+        text-align: left;
+        color: #fff;
+      }
+    }
+    @media (min-width: 551px) and(max-width: 990px) {
+      .midMenu {
+        background-color: rgba(255, 255, 255, 0.692);
+        font-size: 26px;
+        font-weight: bold;
+        text-align: left;
+        color: #fff;
+      }
+    }
+    @media (max-width: 550px) {
+      .smallMenu {
+        background-color: rgba(255, 255, 255, 0.692);
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+        color: #fff;
+      }
+    }
+  </style>
+  <body style="background-color: #999;">
+    <script>
+      $(document).ready(function() {
+        $(".navbar-toggler,.overlay").on("click", function() {
+          $(".mobileMenu,.overlay").toggleClass("open");
+        });
+      });
+    </script>
+    <!--------------------Navigation Bar------------------->
+
+    <nav
+      class="navbar navbar-expand-lg navbar-light  justify-content-sm-start fixed-top"
+      style="margin-top: 0%;background-color: whitesmoke"
+    >
+      <a
+        class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 mr-auto"
+        href="Index.html"
+        style="color: black;font-weight: bold"
+        >Honey.pk</a
+      >
+      <button class="navbar-toggler align-self-start" type="button">
+        <span class="navbar-toggler-icon"> </span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse d-flex flex-column flex-lg-row flec-xl-row justify-content-lg-end mobileMenu p-lg-0 mt-5 mt-lg-0"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav align-self-stretch" style="padding-right: 7%">
+          <li class="nav-item">
+            <a
+              class="nav-link underline"
+              style="color: black;font-weight: bold;font-size: 20px"
+              href="Index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item ">
+            <a
+              class="nav-link"
+              style="color: #000000;font-weight: bold;font-size: 20px"
+              href="#"
+              >Wishlist</a
+            >
+          </li>
+
+          <li class="nav-item ">
+            <a
+              class="nav-link"
+              style="color: #000000;font-weight: bold;font-size: 20px"
+              href="#"
+              >FAQ</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="overlay"></div>
+    <!-----------------------Remaining Body------------------->
+
+    <a href="#" class="float" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+    <div>
+      <section class="smallMenu largeMenu midMenu">
+        <h1>Shopping Wishlist</h1>
+      </section>
+      <section></section>
+      <section></section>
+    </div>
+  </body>
+</html>

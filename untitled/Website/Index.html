@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homepage</title>
+  </head>
+
+  <!-----------------CSS------------->
+
+  <style>
+    body {
+      background-image: url("Yahoo Images/1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    @media (max-width: 992px) {
+      .mobileMenu {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0px;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+        transition: all ease 0.35s;
+        padding-top: 8%;
+        padding-left: 10%;
+        background-color: whitesmoke;
+      }
+      .mobileMenu.open {
+        transform: translateX(0%);
+      }
+      .mobileMenu .navbar-nav {
+        overflow-y: auto;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+      }
+      .overlay.open {
+        display: block;
+        z-index: 1029;
+      }
+    }
+
+    @media (min-width: 991px) and (max-width: 1920px) {
+      .largeMenu {
+        top: 0;
+        bottom: 0;
+        transition: all ease-in 0.5s;
+
+        font-size: 48px;
+      }
+      #mb2 {
+        float: right;
+      }
+      #mb3 {
+        float: right;
+      }
+      #mb1 {
+        float: right;
+      }
+      #sec1 {
+        padding-right: 10%;
+        padding-top: 2%;
+      }
+      #mb4 {
+        float: right;
+      }
+      #mb5 {
+        float: right;
+      }
+      #mb6 {
+        float: right;
+      }
+
+      .plarge {
+        font-size: large;
+        margin-top: 3%;
+      }
+      section {
+        width: 100%;
+        height: auto;
+      }
+      section h1 {
+        font-size: 28px;
+        font-family: Verdana;
+        color: orangered;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 5%;
+      }
+      section h2 {
+        font-size: 26px;
+        font-family: Arial;
+        color: #1c7430;
+        text-align: center;
+        font-weight: bold;
+        font-style: italic;
+      }
+      div#intro {
+        padding-left: 30%;
+      }
+      .arrivals {
+        width: 92%;
+      }
+    }
+    @media (min-width: 551px) and (max-width: 990px) {
+      .midMenu {
+        transition: all ease-in 0.5s;
+        font-size: 44px;
+
+        padding-left: 5%;
+      }
+      .pmid {
+        font-size: large;
+        margin-top: 5%;
+      }
+
+      section {
+        width: 100%;
+        height: auto;
+      }
+      section h1 {
+        font-size: 24px;
+        font-family: Verdana;
+        color: orangered;
+        text-align: center;
+        padding-top: 10%;
+      }
+      section h2 {
+        font-size: 24px;
+        font-family: Arial;
+        color: darkgreen;
+        text-align: center;
+        font-weight: bold;
+        font-style: italic;
+      }
+      div#intro {
+        padding-left: 28%;
+      }
+
+      #mb2 {
+        float: right;
+      }
+      #mb3 {
+        float: right;
+      }
+      #mb1 {
+        float: right;
+      }
+      #sec1 {
+        padding-right: 10%;
+        padding-top: 2%;
+      }
+      #mb4 {
+        float: right;
+      }
+      #mb5 {
+        float: right;
+      }
+      #mb6 {
+        float: right;
+      }
+      .arrivals {
+        width: 98%;
+      }
+    }
+    @media (max-width: 550px) {
+      .smallMenu {
+        font-size: 30px;
+        transition: all ease-in 0.5s;
+      }
+      .psmall {
+        font-size: 32px;
+        margin-top: 8%;
+        font-weight: bold;
+      }
+      section {
+        width: 100%;
+        height: auto;
+      }
+      section h1 {
+        font-size: 20px;
+        font-family: "Verdana";
+        color: orangered;
+        text-align: center;
+        color: lightsalmon;
+        padding-top: 10%;
+      }
+      section h2 {
+        font-size: 22px;
+        font-family: Arial;
+        color: #1c7430;
+        text-align: center;
+        font-weight: bold;
+        font-style: italic;
+      }
+      #sec1 {
+        padding-left: 10%;
+      }
+      .arrivals {
+        width: 98%;
+      }
+    }
+
+    .underline {
+      border-bottom: 2px solid orangered;
+      line-height: 1.5;
+    }
+    .float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      padding: auto;
+    }
+
+    .my-float {
+      margin-top: 16px;
+    }
+    .fa {
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+    .fa-facebook {
+      background: #3b5998;
+      color: white;
+    }
+  </style>
+
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <body>
+    <!--------------Java-Script---------------->
+    <script>
+      $(document).ready(function() {
+        $(".navbar-toggler,.overlay").on("click", function() {
+          $(".mobileMenu,.overlay").toggleClass("open");
+        });
+      });
+    </script>
+
+    <!--------------------Navigation Bar------------------->
+
+    <nav
+      class="navbar navbar-expand-lg navbar-light  justify-content-sm-start fixed-top"
+      style="margin-top: 0%;background-color: white"
+    >
+      <a
+        class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 mr-auto"
+        href="Index.html"
+        style="color: black;font-weight: bold"
+        ><img
+          src="Yahoo Images/azlan 10.jpg"
+          alt="Honey.pk"
+          style="height:50px;width:50px"/></a
+      ><!--------------Logo----------->
+
+      <button class="navbar-toggler align-self-start" type="button">
+        <span class="navbar-toggler-icon"> </span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse d-flex flex-column flex-lg-row flec-xl-row justify-content-lg-end mobileMenu p-lg-0 mt-5 mt-lg-0"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav align-self-stretch" style="padding-right: 7%">
+          <li class="nav-item">
+            <a
+              class="nav-link underline"
+              style="color: black;font-weight: bold;font-size: 20px"
+              href="Index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item ">
+            <a
+              class="nav-link"
+              style="color: #000000;font-weight: bold;font-size: 20px"
+              >Wishlist</a
+            >
+          </li>
+
+          <li class="nav-item ">
+            <a
+              class="nav-link"
+              style="color: #000000;font-weight: bold;font-size: 20px"
+              href="#contact"
+              >Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="overlay"></div>
+    <!-----------------------Remaining Body------------------->
+    <!---------------Whatsapp Icon--------------->
+    <a href="#" class="float" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <!------------------Paragraphs---------->
+    <div
+      class="container largeMenu smallMenu midMenu "
+      style="width: 100%;height: 100vh;padding-top: 25%"
+      id="intro"
+    >
+      <span style="margin-top: 2%;color:orangered;font-weight: bold;"
+        >Natural, Organic</span
+      ><br />
+      <span
+        style="border-bottom: 2px solid orangered;color:orangered;font-weight: bold;"
+      >
+        and Cold Extracted</span
+      >
+      <p class="plarge pmid psmall" style="font-weight: bold;color:brown">
+        Organic Honey has several requirements, the honey should be 100%
+        natural, unadulterated, unpasteruized and extract through the cold
+        extraction process.
+      </p>
+      <p class="pmid plarge psmall" style="font-weight: bold;color: brown;">
+        My Honey is the Pakistan's largest online organic honey store. We
+        purchase honey from small beekeepers and make sure the honey is 100%
+        organic
+      </p>
+
+      <a
+        class="btn btn-success bsmall"
+        href="Index.html"
+        style="font-size: 22px"
+        >Online Store</a
+      >
+    </div>
+    <!---------------------------2nd Page----------------------->
+    <div>
+      <section style="background-color: whitesmoke;" id="main">
+        <h1 style="font-size: 34px;">Organic Food Store</h1>
+        <br />
+        <h2 style="font-size:30px;">
+          <u>All Pure Natural and Cold Extracted</u>
+        </h2>
+        <h2
+          class="card btn btn-dark disabled"
+          style="font-size: 35px;margin: 0% 10% 0% 10%;"
+        >
+          Check to get
+        </h2>
+        <!-----------------------------Images-------------------->
+        <div class="container" id="sec1">
+          <div style="width: 300px;height: 300px;" id="mb1">
+            <img
+              src="Yahoo Images/84393581_736738096855787_5294268858494877696_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+
+          <div style="width: 300px;height: 300px; " id="mb2">
+            <img
+              src="Yahoo Images/84667048_186797125863454_3523782454596861952_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <div style="width: 300px;height: 300px" id="mb3">
+            <img
+              src="Yahoo Images/86190830_1053958628318513_4230768448436699136_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <div style="width: 300px;height: 300px; " id="mb4">
+            <img
+              src="Yahoo Images/85178640_823953131365027_518862101242970112_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <div style="width: 300px;height: 300px; " id="mb5">
+            <img
+              src="Yahoo Images/85185410_766665400409402_1177258477228130304_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <div style="width: 300px;height: 300px; " id="mb6">
+            <img
+              src="Yahoo Images/86292063_205411093978864_2995075717080809472_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <h2
+            class="arrivals card btn-dark disabled"
+            style="float: right;margin-top: 2%;font-size: 30px;"
+          >
+            Exclusive
+          </h2>
+        </div>
+      </section>
+
+      <section id="main1">
+        <div class="container" id="sec1">
+          <div style="width: 300px;height: 300px;" id="mb1">
+            <img
+              src="Yahoo Images/84393581_736738096855787_5294268858494877696_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+
+          <div style="width: 300px;height: 300px; " id="mb2">
+            <img
+              src="Yahoo Images/86190830_1053958628318513_4230768448436699136_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <div style="width: 300px;height: 300px" id="mb3">
+            <img
+              src="Yahoo Images/azlan honey_jpg8.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <div style="width: 300px;height: 300px; " id="mb4">
+            <img
+              src="Yahoo Images/86266701_204814453904249_2654129651072368640_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <div style="width: 300px;height: 300px; " id="mb5">
+            <img
+              src="Yahoo Images/azlan 9.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+          <div style="width: 300px;height: 300px; " id="mb6">
+            <img
+              src="Yahoo Images/86383082_147906949541577_7096594052526637056_n.jpg"
+              style="width: 300px;height: 300px;"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-------------------------3rd Page-------------------------------->
+    <div>
+      <h1
+        class="card btn-dark disabled"
+        style="float: left;margin-top: 2%;width: 100%;padding-left: 40%;opacity: 0.9;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+      >
+        About Us
+      </h1>
+      <p
+        style="float: left;background-color: rgba(255, 255, 255, 0.747);font-size: 20px;"
+      >
+        We are selling online honey with 100% guaranteed
+        product.addddddddddddddddddddddddddds adddddddddddddddddddddddddddsa
+        adddddddddddddwwwwww
+      </p>
+    </div>
+    <div>
+      <h2
+        style="float: left;margin-top: 0%;margin-right: 30%;padding: 1%;"
+        class="card btn-dark disabled"
+        id="contact"
+      >
+        Contact Us
+      </h2>
+      <!-- Add font awesome icons -->
+
+      <a
+        href="#"
+        class="fa fa-facebook"
+        style="padding: 20px;float: left;margin-top: 0%;margin-right: 100%;"
+      ></a>
+    </div>
+  </body>
+</html>
